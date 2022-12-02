@@ -8,38 +8,58 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Generatore Password</title>
 
-    <style>
-        body{
-            background-color:#e5e5e5;
-            color: #fca311;
-        }
-        h2{
-            font-size:3rem;
-        }
-        main{
-            height: 100vh;
-        }
-        .container-sm{
-            height: 50%;
-            position: absolute;
-            top:0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-            width: 65vw;
-            border-radius: 30px;
-            background-color: #14213d;
-            padding: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 
 </head>
 <body>
-   <main class="">
-        <div class="container-sm ">
-            <h2 class="">ciao</h2>
+   <main>
+        <div class="ft-container">
+            <h1 class="text-uppercase mb-2">Strong password generator</h1>
+            <div class="ft-form">
+                <div class="py-4">
+                    <form action="text-start">
+                        <label for="basic-url" class="form-label text-capitalize">required password length</label>
+                        <div class="input-group mb-3 w-50 m-auto">
+                            <input type="text" class="form-control text-center" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="same_chars" id="flexRadioDefault1" checked>
+                        <label class="form-check-label text-capitalize" for="flexRadioDefault1">
+                            repeating characters
+                        </label>
+                    </div>
+                    <div class="form-check mx-4">
+                        <input class="form-check-input" type="radio" name="same_chars" id="flexRadioDefault2">
+                        <label class="form-check-label text-capitalize" for="flexRadioDefault2">
+                            NO repeating characters
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="checkbox-form d-flex">
+                        <input type="checkbox" id="numbers" checked>
+                        <label for="numbers" class="mx-3">Numbers</label>
+                    </div>
+                    <div class="checkbox-form d-flex">
+                        <input type="checkbox" id="letters" checked>
+                        <label for="numbers" class="mx-3">Letters</label>
+                    </div>
+                    <div class="checkbox-form d-flex">
+                        <input type="checkbox" id="specialchars" checked>
+                        <label for="numbers" class="mx-3">Spacial Characters</label>
+                    </div>
+                </div>
+
+            </div>   
+            <div class="d-flex justify-content-center py-5">
+                <button class="ft-btn">Generate</button>
+            </div> 
+            
         </div>
+
    </main>
     
 </body>

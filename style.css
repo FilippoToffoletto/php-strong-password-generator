@@ -1,0 +1,59 @@
+body{
+    background-color:#e5e5e5;
+    color: #fca311;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h2{
+    font-size:3rem;
+}
+.ft-container{
+    width: 60vw;
+    height: 60vh;
+    margin: 10vh;
+    border-radius: 30px;
+    background-color: #14213d;
+    padding: 20px;
+}
+h1{
+    text-align: center;
+}
+.ft-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+
+/* CSS */
+.ft-btn {
+  background-color: #fca311;
+  border: 1px solid #fca311;
+  border-radius: 4px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #14213d;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  text-transform: uppercase;
+}
+
+.ft-btn:hover {
+  box-shadow: rgba(205, 16, 16, 0.624) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
