@@ -1,3 +1,54 @@
+<?php
+    $carachterPsw = [
+        'a',
+        'b',
+        'c',
+        'D',
+        'E',
+        'f',
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        '!',
+        '?',
+        '&',
+        '%',
+        '$',
+        '<',
+        '>',
+        '^',
+        '+',
+        '-',
+        '*',
+        '/',
+        '(',
+        ')',
+        '[',
+        ']',
+        '{',
+        '}',
+        '@',
+        '#',
+        '_',
+        '='
+    
+];
+    function generatePsw($carachterPsw){
+        $pswGenerated = '';
+        for($i = 0; $i < $_GET['nCharactersPsw']; $i++) {
+            $pswGenerated .= $carachterPsw[rand(0, count($carachterPsw) - 1)];
+        }
+        echo $pswGenerated;
+    };
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,48 +66,22 @@
    <main>
         <div class="ft-container">
             <h1 class="text-uppercase mb-2">Strong password generator</h1>
-            <div class="ft-form">
-                <div class="py-4">
-                    <form action="text-start">
-                        <label for="basic-url" class="form-label text-capitalize">required password length</label>
-                        <div class="input-group mb-3 w-50 m-auto">
-                            <input type="text" class="form-control text-center" id="basic-url" aria-describedby="basic-addon3">
+            <div class="row">
+                <div class="col my-5 m-auto">
+                    <form action="./index.php" method="GET">
+                        <label class="form-label" for="inputNPsw">Inserisci il numero di caratteri della tua password</label> 
+                        <input class="form-control w-25"  type="number" placeholder="Inserisci il numero di caratteri" name="nCharactersPsw" id="inputNPsw">
+                        <div class="py-3">
+                            <button type="submit" class="ft-btn">Genera</button>
                         </div>
                     </form>
                 </div>
-                <div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="same_chars" id="flexRadioDefault1" checked>
-                        <label class="form-check-label text-capitalize" for="flexRadioDefault1">
-                            repeating characters
-                        </label>
-                    </div>
-                    <div class="form-check mx-4">
-                        <input class="form-check-input" type="radio" name="same_chars" id="flexRadioDefault2">
-                        <label class="form-check-label text-capitalize" for="flexRadioDefault2">
-                            NO repeating characters
-                        </label>
-                    </div>
-                </div>
-                <div>
-                    <div class="checkbox-form d-flex">
-                        <input type="checkbox" id="numbers" checked>
-                        <label for="numbers" class="mx-3">Numbers</label>
-                    </div>
-                    <div class="checkbox-form d-flex">
-                        <input type="checkbox" id="letters" checked>
-                        <label for="numbers" class="mx-3">Letters</label>
-                    </div>
-                    <div class="checkbox-form d-flex">
-                        <input type="checkbox" id="specialchars" checked>
-                        <label for="numbers" class="mx-3">Spacial Characters</label>
-                    </div>
-                </div>
-
-            </div>   
-            <div class="d-flex justify-content-center py-5">
-                <button class="ft-btn">Generate</button>
-            </div> 
+            </div>
+            <?php  if(!empty($_GET['nCharactersPsw'])) : ?>
+                <h2 class="pass">
+                    <?php generatePsw($carachterPsw); ?>
+                </h2>
+            <?php  endif; ?>
             
         </div>
 
